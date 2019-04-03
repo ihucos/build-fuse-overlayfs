@@ -12,11 +12,11 @@ meson
 ninja-build
 
 --layer
---write-script /usr/local/bin/build-fuse-unionfs
+--write-script /usr/local/bin/build-fuse-overlayfs
 #!/bin/bash
 
 if [ "$#" -ne 1 ]; then
-  echo "usage: build-fuse-unionfs OUT-BINARY"
+  echo "usage: build-fuse-overlayfs OUT-BINARY"
   exit 1
 fi
 
@@ -45,4 +45,4 @@ make install
 cd "$origpwd"
 exec cp /usr/bin/fuse-overlayfs $1
 
---entrypoint /usr/local/bin/build-fuse-unionfs
+--entrypoint /usr/local/bin/build-fuse-overlayfs
