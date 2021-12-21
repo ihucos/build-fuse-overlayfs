@@ -1,6 +1,6 @@
 #!/usr/bin/env plash-exec
 
---from fedora
+--from fedora:35
 --dnf
 autoconf
 automake
